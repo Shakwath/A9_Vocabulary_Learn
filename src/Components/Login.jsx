@@ -141,7 +141,7 @@ const Login = () => {
           <p className="text-center font-semibold pt-4">
             Don’t have an account?{" "}
             <Link className="text-secondary" to="/Register">
-              Sign up
+             Register
             </Link>
           </p>
         </fieldset>

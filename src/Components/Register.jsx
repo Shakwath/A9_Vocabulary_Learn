@@ -34,7 +34,7 @@ const Register = () => {
             navigate("/");
           })
           .catch((error) => {
-            //console.log(error);
+          
             setUser(user);
           });
       })
@@ -42,7 +42,7 @@ const Register = () => {
         const errorCode = error.code;
         const errorMessage = error.message;
         alert(errorMessage, errorCode);
-        // ..
+        
       });
   };
   return (

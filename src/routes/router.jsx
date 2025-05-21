@@ -10,6 +10,9 @@ import Login from '../Components/Login';
 import LessonDetail from '../Components/LessonDetail';
 import SignUp from '../Components/Register';
 import Error404 from '../Components/Error404';
+import Register from '../Components/Register';
+import MyProfile from '../Pages/Myprofile';
+import UpdateProfile from '../Pages/updateProfile';
 
 const router = createBrowserRouter([
     {
@@ -41,8 +44,16 @@ const router = createBrowserRouter([
             element:<Login></Login>,
            },
             {
-                    path : '/signUp',
-                    element: <SignUp></SignUp>
+                    path : '/Register',
+                    element: <Register></Register>,
+            },
+            {
+                    path : '/myprofile',
+                    element: <MyProfile></MyProfile>,
+            },
+             {
+                    path : '/UpdateProfile',
+                    element: <UpdateProfile></UpdateProfile>
             },
             {
                 path: "/*",
