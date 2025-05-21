@@ -7,6 +7,8 @@ import Tutorials from '../Pages/Tutorials.JSX';
 import AboutUs from '../Pages/AboutUs';
 import PrivateRoute from '../Components/Provider/PrivateRoute';
 import Login from '../Components/Login';
+import LessonDetail from '../Components/LessonDetail';
+import SignUp from '../Components/SignUp';
 
 const router = createBrowserRouter([
     {
@@ -22,8 +24,12 @@ const router = createBrowserRouter([
             element:<Startlearning></Startlearning>,
            },
            {
+            path: "/lesson/:lesson_no",
+            element: <PrivateRoute><LessonDetail></LessonDetail></PrivateRoute>,
+            },
+           {
             path: "/Tutorials",
-            element:<PrivateRoute><Tutorials></Tutorials></PrivateRoute>,
+            element:<Tutorials></Tutorials>,
            },
            {
             path: '/AboutUs',
@@ -32,7 +38,11 @@ const router = createBrowserRouter([
            {
             path: 'login',
             element:<Login></Login>,
-           }
+           },
+            {
+                    path : '/signUp',
+                    element: <SignUp></SignUp>
+                },
        ],
     },
 ]);
