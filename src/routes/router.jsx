@@ -13,6 +13,7 @@ import Error404 from '../Components/Error404';
 import Register from '../Components/Register';
 import MyProfile from '../Pages/Myprofile';
 import UpdateProfile from '../Pages/updateProfile';
+import ForgetPassword from '../Pages/ForgetPassword';
 
 const router = createBrowserRouter([
     {
@@ -33,7 +34,7 @@ const router = createBrowserRouter([
             },
            {
             path: "/Tutorials",
-            element:<Tutorials></Tutorials>,
+            element:<PrivateRoute><Tutorials></Tutorials></PrivateRoute>,
            },
            {
             path: '/AboutUs',
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
             {
                     path : '/Register',
                     element: <Register></Register>,
+            },
+            {
+                    path : '/forgetpassword',
+                    element: <ForgetPassword></ForgetPassword>,
             },
             {
                     path : '/myprofile',

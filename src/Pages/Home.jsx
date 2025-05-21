@@ -116,22 +116,22 @@ const Home = () => {
             Connect with fellow learners, share progress, and grow together. Follow us for tips and updates!
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
-  {[
-    { href: 'https://facebook.com', icon: <FaFacebookF />, label: 'Facebook', animation: 'flip-left' },
-    { href: 'https://discord.com', icon: <FaDiscord />, label: 'Discord', animation: 'flip-up' },
-    { href: 'https://twitter.com', icon: <FaTwitter />, label: 'Twitter', animation: 'flip-right' }
-  ].map((social, i) => (
-    <a
-      key={i}
-      href={social.href}
-      target="_blank"
-      rel="noopener noreferrer"
-      data-aos={social.animation}
-      className="flex items-center justify-center gap-2 bg-white text-blue-700 px-5 py-2 rounded-full shadow hover:bg-blue-50 transition text-sm sm:text-base"
-    >
-      {social.icon}
-      {social.label}
-    </a>
+          {[
+            { href: 'https://facebook.com', icon: <FaFacebookF />, label: 'Facebook', animation: 'flip-left' },
+            { href: 'https://discord.com', icon: <FaDiscord />, label: 'Discord', animation: 'flip-up' },
+            { href: 'https://twitter.com', icon: <FaTwitter />, label: 'Twitter', animation: 'flip-right' }
+          ].map((social, i) => (
+            <a
+              key={i}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-aos={social.animation}
+              className="flex items-center justify-center gap-2 bg-white text-blue-700 px-5 py-2 rounded-full shadow hover:bg-blue-50 transition text-sm sm:text-base"
+            >
+              {social.icon}
+              {social.label}
+            </a>
   ))}
 </div>
 

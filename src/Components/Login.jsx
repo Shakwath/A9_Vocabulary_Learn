@@ -5,8 +5,9 @@ import github from '../assets/github.png';
 import login from '../assets/login-illustration.jpg';
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Components/Provider/AuthProvider";
-import { GoogleAuthProvider, signInWithPopup, GithubAuthProvider,sendPasswordResetEmail } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup, GithubAuthProvider } from "firebase/auth";
 import auth from "../Firebase.init";
+import toast from 'react-hot-toast';
 import { useRef } from "react";
 
 const Login = () => {
@@ -18,6 +19,11 @@ const Login = () => {
   const navigate = useNavigate();
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
+
+  const goToForget = () => {
+  const email = emailRef.current?.value;
+  navigate("/forgetpassword", { state: { email } });
+};
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -33,9 +39,20 @@ const Login = () => {
         //console.log("Login success:", user);
         navigate(location.state?.from?.pathname || "/");
       })
-      .catch((error) => {
-        setError(error.message || "Login failed");
-      });
+            .catch((error) => {
+        const errorMessage = error.message || "Login failed";
+
+        if (errorMessage.includes("auth/wrong-password")) {
+            toast.error("Incorrect password. Try again or use 'Forgot password'.");
+        } else if (errorMessage.includes("auth/user-not-found")) {
+            toast.error("No user found with this email.");
+        } else {
+            toast.error(errorMessage);
+        }
+
+        setError(errorMessage); // This line only updates internal state, not a reload
+        });
+
   };
 
   
@@ -66,19 +83,19 @@ const Login = () => {
     };
 
 
-  const handleForgetPassword = () => {
-       // console.log('get me email address', emailRef.current.value);
-        const email = emailRef.current.value;
-        if(!email){
-           // console.log('Please provide a valid email address')
-        }
-        else {
-            sendPasswordResetEmail(auth, email)
-            .then(() =>{
-                alert('Password Reset email sent, please check your email')
-            })
-        }
-    }
+//   const handleForgetPassword = () => {
+//        // console.log('get me email address', emailRef.current.value);
+//         const email = emailRef.current.value;
+//         if(!email){
+//            // console.log('Please provide a valid email address')
+//         }
+//         else {
+//             sendPasswordResetEmail(auth, email)
+//             .then(() =>{
+//                 alert('Password Reset email sent, please check your email')
+//             })
+//         }
+//     }
 
 
   return (
@@ -123,7 +140,7 @@ const Login = () => {
           </div>
 
           <div className="text-right">
-            <a onClick={handleForgetPassword} className="text-cyan-700 link link-hover">
+            <a onClick={goToForget}className="text-cyan-700 link link-hover">
               Forgot password?
             </a>
           </div>
