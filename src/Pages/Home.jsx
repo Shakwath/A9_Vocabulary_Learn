@@ -57,7 +57,7 @@ const Home = () => {
           </div>
 
           <div className="mt-10">
-            <Link to="/start-learning">
+            <Link to="/startlearning">
               <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition shadow-lg">
                 Start Learning Now
               </button>

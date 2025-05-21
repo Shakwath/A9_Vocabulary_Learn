@@ -1,17 +1,29 @@
 import React, { useState } from 'react';
-//import login from '../assets/login-illustration.jpg';
 import { Link } from 'react-router-dom';
 import signup from '../assets/signup.png';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 const SignUp = () => {
     const [showModal, setShowModal] = useState(false); // State for modal visibility
     const [modalMessage, setModalMessage] = useState(''); // State for dynamic modal message
+    const auth = getAuth();
 
     const handleSubmit = (e) => {
-        e.preventDefault(); // Prevent default form submission
-        setModalMessage('Thanks for Submitting!'); // Set dynamic message
-        setShowModal(true); // Show the modal
+        e.preventDefault(); 
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+
+        setModalMessage('Thanks for Submitting!'); 
+        setShowModal(true); 
+         createUserWithEmailAndPassword(auth, email, password)
+          .then((result) => {
+               console.log(result);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     };
+    
 
     const closeModal = () => {
         setShowModal(false); 
@@ -37,6 +49,7 @@ const SignUp = () => {
                     <label className="input input-bordered flex items-center gap-2 w-full mb-4">
                         <input
                             type="text"
+                            name='name'
                             className="grow w-full p-2 border rounded-md"
                             placeholder="Enter username"
                             required
@@ -48,6 +61,7 @@ const SignUp = () => {
                     <label className="input input-bordered flex items-center gap-2 w-full mb-4">
                         <input
                             type="email"
+                            name='email'
                             className="grow w-full p-2 border rounded-md"
                             placeholder="Enter Email"
                             required
@@ -61,6 +75,7 @@ const SignUp = () => {
                     <label className="input input-bordered flex items-center gap-2 w-full mb-4">
                         <input
                             type="password"
+                            name='password'
                             className="grow w-full p-2 border rounded-md"
                             placeholder="Enter Password"
                             required
@@ -68,22 +83,11 @@ const SignUp = () => {
                         />
                     </label>
 
-                    {/* Confirm Password */}
-                    <h2 className="mb-2 text-lg font-semibold text-left">Confirm Password</h2>
-                    <label className="input input-bordered flex items-center gap-2 w-full mb-4">
-                        <input
-                            type="password"
-                            className="grow w-full p-2 border rounded-md"
-                            placeholder="Enter Password"
-                            required
-                        />
-                    </label>
 
                     {/* Submit Button */}
                     <button
                         type="submit"
-                        className="w-full px-4 py-2 bg-slate-800 text-white font-semibold rounded-md hover:bg-green-600 transition"
-                    >
+                        className="w-full px-4 py-2 bg-slate-800 text-white font-semibold rounded-md hover:bg-green-600 transition">
                         Submit
                     </button>
                 </form>

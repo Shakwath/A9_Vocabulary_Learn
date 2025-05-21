@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import loginicon from '../assets/loginicon.png'
 
 const Navbar = () => {
   return (
@@ -23,7 +24,11 @@ const Navbar = () => {
       <div className="flex-none">
         {/* Large screen: login button */}
         <div className="hidden lg:flex">
-          <NavLink to="/login" className="btn btn-outline btn-primary">Login</NavLink>
+          <NavLink to="/login" className="btn btn-outline btn-primary flex items-center gap-2">
+            <img src={loginicon} alt="login" className="w-5 h-5" />
+            Login
+          </NavLink>
+
         </div>
 
         {/* Small screen: dropdown */}
@@ -40,7 +45,9 @@ const Navbar = () => {
             <li><NavLink to="/Startlearning">Start learning</NavLink></li>
             <li><NavLink to="/Tutorials">Tutorials</NavLink></li>
             <li><NavLink to="/AboutUs">About Us</NavLink></li>
-            <li><NavLink to="/login">Login</NavLink></li>
+            <li> <NavLink to="/login"><img src={loginicon} alt="login" className="w-5 h-5" />
+            Login</NavLink></li>
+            
           </ul>
         </div>
       </div>

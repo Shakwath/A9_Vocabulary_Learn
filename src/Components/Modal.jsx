@@ -11,7 +11,7 @@ const Modal = ({ vocab, onClose }) => {
         <p className="mb-1"><strong>When to Say:</strong> {vocab.when_to_say}</p>
         <p className="mb-1"><strong>Example:</strong> {vocab.example}</p>
         <button
-          className="mt-4 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+          className="mt-4 px-4 py-2 bg-green-500 text-white rounded hover:bg-red-600"
           onClick={onClose}
         >
           Close

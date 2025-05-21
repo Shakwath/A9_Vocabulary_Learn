@@ -14,9 +14,16 @@ const difficultyColors = {
 const LessonDetail = () => {
   const { lesson_no } = useParams();
   const navigate = useNavigate();
-  const [user, setUser] = useState(null);
+  const [ setUser] = useState(null);
   const [vocabularies, setVocabularies] = useState([]);
   const [selectedVocab, setSelectedVocab] = useState(null);
+
+  // Function to speak the vocabulary word
+const speakWord = (word) => {
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = 'de-DE'; // German language
+  speechSynthesis.speak(utterance);
+};
 
   // Check user authentication
   useEffect(() => {
@@ -45,7 +52,7 @@ const LessonDetail = () => {
         Lesson {lesson_no} Vocabulary
       </h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 justify-between">
         {vocabularies.map((vocab) => (
           <div
             key={vocab.word}
@@ -61,6 +68,16 @@ const LessonDetail = () => {
             >
               When to Say
             </button>
+
+            <h2 className="text-xl font-bold flex items-center gap-2">
+            {/* {vocab.word} */}
+            <button
+              onClick={() => speakWord(vocab.word)}
+              className="text-blue-500 hover:text-blue-700" >
+              Speak🔊
+            </button>
+            </h2>
+
           </div>
         ))}
       </div>
@@ -69,7 +86,7 @@ const LessonDetail = () => {
       <div className="text-center mt-8">
         <button
           onClick={() => navigate('/Startlearning')}
-          className="px-6 py-2 bg-gray-700 text-white rounded hover:bg-gray-800"
+          className="px-8 py-3 bg-gray-700 text-white rounded hover:bg-gray-800"
         >
           Back to Lesson
         </button>
