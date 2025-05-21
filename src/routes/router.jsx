@@ -8,7 +8,7 @@ import AboutUs from '../Pages/AboutUs';
 import PrivateRoute from '../Components/Provider/PrivateRoute';
 import Login from '../Components/Login';
 import LessonDetail from '../Components/LessonDetail';
-import SignUp from '../Components/SignUp';
+import SignUp from '../Components/Register';
 import Error404 from '../Components/Error404';
 
 const router = createBrowserRouter([

@@ -30,7 +30,7 @@ const Login = () => {
     signIn(email, password)
       .then((result) => {
         const user = result.user;
-        console.log("Login success:", user);
+        //console.log("Login success:", user);
         navigate(location.state?.from?.pathname || "/");
       })
       .catch((error) => {
@@ -67,10 +67,10 @@ const Login = () => {
 
 
   const handleForgetPassword = () => {
-        console.log('get me email address', emailRef.current.value);
+       // console.log('get me email address', emailRef.current.value);
         const email = emailRef.current.value;
         if(!email){
-            console.log('Please provide a valid email address')
+           // console.log('Please provide a valid email address')
         }
         else {
             sendPasswordResetEmail(auth, email)
@@ -140,7 +140,7 @@ const Login = () => {
 
           <p className="text-center font-semibold pt-4">
             Don’t have an account?{" "}
-            <Link className="text-secondary" to="/SignUp">
+            <Link className="text-secondary" to="/Register">
               Sign up
             </Link>
           </p>
