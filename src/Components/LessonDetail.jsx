@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { onAuthStateChanged } from 'firebase/auth';
-//import { auth } from '../Firebase.init';
 import auth from '../Firebase.init';
-import Modal from './Modal'; 
-import fakeData from '../data/vocabulary.json'; 
+import Modal from './Modal';
+import fakeData from '../data/vocabulary.json';
 
 const difficultyColors = {
   easy: 'bg-green-100',
@@ -19,7 +18,7 @@ const LessonDetail = () => {
   const [vocabularies, setVocabularies] = useState([]);
   const [selectedVocab, setSelectedVocab] = useState(null);
 
-  // Check authentication
+  // Check user authentication
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if (!currentUser) {
@@ -32,7 +31,7 @@ const LessonDetail = () => {
     return () => unsubscribe();
   }, [navigate]);
 
-  // Load vocabularies
+  // Filter vocabulary data
   useEffect(() => {
     const filtered = fakeData.filter(
       (item) => item.lesson_no === parseInt(lesson_no)
@@ -50,7 +49,7 @@ const LessonDetail = () => {
         {vocabularies.map((vocab) => (
           <div
             key={vocab.word}
-            className={`p-4 rounded-lg shadow-md cursor-pointer hover:shadow-lg transition ${difficultyColors[vocab.difficulty]}`}
+            className={`p-4 rounded-lg shadow-md cursor-pointer hover:shadow-lg transition ${difficultyColors[vocab.difficulty] || 'bg-gray-100'}`}
           >
             <h2 className="text-xl font-bold">{vocab.word}</h2>
             <p className="text-sm text-gray-700">Meaning: {vocab.meaning}</p>
@@ -69,14 +68,14 @@ const LessonDetail = () => {
       {/* Back to Lessons */}
       <div className="text-center mt-8">
         <button
-          onClick={() => navigate('/learn')}
+          onClick={() => navigate('/Startlearning')}
           className="px-6 py-2 bg-gray-700 text-white rounded hover:bg-gray-800"
         >
           Back to Lesson
         </button>
       </div>
 
-      {/* Modal */}
+      {/* Modal Component */}
       {selectedVocab && (
         <Modal vocab={selectedVocab} onClose={() => setSelectedVocab(null)} />
       )}
