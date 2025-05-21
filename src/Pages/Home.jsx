@@ -6,26 +6,7 @@ import CountUp from "react-countup";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-
-
-// Testimonials array
-const testimonials = [
-  {
-    name: "John Doe",
-    role: "Student",
-    quote: "This is the best vocabulary app I have ever used. It made learning fun and easy!",
-  },
-  {
-    name: "Jane Smith",
-    role: "Teacher",
-    quote: "I recommend this app to all my students. It’s very effective for expanding vocabulary.",
-  },
-  {
-    name: "Carlos Garcia",
-    role: "Parent",
-    quote: "My child has improved their Spanish vocabulary significantly after using this app!",
-  },
-];
+import { FaFacebookF, FaDiscord, FaTwitter } from "react-icons/fa";
 
 const Home = () => {
   const categories = useLoaderData();
@@ -121,28 +102,85 @@ const Home = () => {
           </div>
         </div>
       </section>
+  {/* extra section */}
+     
+{/* How Learners Use It */}
+<section className="bg-white py-16 mt-12">
+  <div className="max-w-6xl mx-auto text-center">
+    <h2 className="text-4xl font-bold text-gray-800 mb-6">How Learners Use It</h2>
+    <p className="text-xl text-gray-600 mb-12">
+      From daily practice to goal-oriented learning, our platform empowers every type of learner.
+    </p>
 
-      {/* Testimonials */}
-      <section className="bg-gray-50 py-16 mt-12">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-blue-800 mb-6">What Our Users Say</h2>
-          <p className="text-xl text-gray-600 mb-12">
-            Don’t just take our word for it. Here’s what our users think!
-          </p>
+    <div className="grid md:grid-cols-3 gap-8 text-left">
+      <div className="p-6 bg-blue-50 rounded-xl shadow-md">
+        <h3 className="text-2xl font-semibold text-blue-700 mb-2">🎓 Students</h3>
+        <p className="text-gray-700">
+          Master new vocabulary faster for school and competitive exams with bite-sized lessons,
+          real-world examples, and spaced repetition that helps knowledge stick.
+        </p>
+      </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="p-6 bg-white shadow-lg rounded-xl">
-                <p className="text-lg text-gray-700 italic">"{testimonial.quote}"</p>
-                <div className="mt-4">
-                  <h3 className="text-xl font-semibold text-blue-800">{testimonial.name}</h3>
-                  <p className="text-gray-500">{testimonial.role}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <div className="p-6 bg-blue-50 rounded-xl shadow-md">
+        <h3 className="text-2xl font-semibold text-blue-700 mb-2">🌍 Travelers</h3>
+        <p className="text-gray-700">
+          Learn practical phrases and situational vocabulary for travel, dining, emergencies,
+          and more. Speak with locals confidently, no matter where your journey takes you.
+        </p>
+      </div>
+
+      <div className="p-6 bg-blue-50 rounded-xl shadow-md">
+        <h3 className="text-2xl font-semibold text-blue-700 mb-2">💼 Professionals</h3>
+        <p className="text-gray-700">
+          Build a strong vocabulary for workplace communication, presentations, and writing.
+          Choose topics like business, healthcare, tech, and more to align with your career.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+ {/* Join Community */}
+<section className="bg-blue-100 py-16 mt-12 rounded-xl">
+  <div className="max-w-4xl mx-auto text-center">
+    <h2 className="text-4xl font-bold text-blue-900 mb-4">Join Our Language Learning Community</h2>
+    <p className="text-lg text-gray-700 mb-8">
+      Connect with fellow learners, share progress, and grow together. Follow us for tips, updates, and language fun!
+    </p>
+    <div className="flex justify-center gap-6">
+      <a
+        href="https://facebook.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-2 bg-white text-blue-700 px-5 py-2 rounded-full shadow hover:bg-blue-50 transition"
+      >
+        <FaFacebookF className="text-xl" />
+        Facebook
+      </a>
+      <a
+        href="https://discord.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-2 bg-white text-blue-700 px-5 py-2 rounded-full shadow hover:bg-blue-50 transition"
+      >
+        <FaDiscord className="text-xl" />
+        Discord
+      </a>
+      <a
+        href="https://twitter.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-2 bg-white text-blue-700 px-5 py-2 rounded-full shadow hover:bg-blue-50 transition"
+      >
+        <FaTwitter className="text-xl" />
+        Twitter
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
     </div>
   );
 };

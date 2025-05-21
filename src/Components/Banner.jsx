@@ -16,6 +16,7 @@ const bannerData = [
   {
     id: 3,
     img: Banner3,
+    
   },
 ];
 
