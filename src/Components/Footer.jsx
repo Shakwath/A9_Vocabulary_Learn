@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
+import mainlogo from '../assets/mainlogo.png';
 
 const Footer = () => {
   return (
@@ -8,7 +9,7 @@ const Footer = () => {
         {/* Logo and tagline */}
         <div className="col-span-1">
           <div className="flex items-center mb-2">
-            <img src="/logo-icon.png" alt="Lingo Bingo Logo" className="w-10 h-10 mr-2" />
+            <img src={mainlogo} alt="Lingo Bingo Logo" className="w-10 h-10 mr-2" />
             <span className="text-lg font-semibold">Lingo Bingo</span>
           </div>
           <p>Helping you to expand your vocabulary, one word at a time!</p>

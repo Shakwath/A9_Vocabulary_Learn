@@ -9,6 +9,7 @@ import PrivateRoute from '../Components/Provider/PrivateRoute';
 import Login from '../Components/Login';
 import LessonDetail from '../Components/LessonDetail';
 import SignUp from '../Components/SignUp';
+import Error404 from '../Components/Error404';
 
 const router = createBrowserRouter([
     {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
             {
                     path : '/signUp',
                     element: <SignUp></SignUp>
+            },
+            {
+                path: "/*",
+                element: <Error404></Error404>,
             },
             
        ],
