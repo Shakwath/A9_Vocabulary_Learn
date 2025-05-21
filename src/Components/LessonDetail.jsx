@@ -6,10 +6,11 @@ import Modal from './Modal';
 import fakeData from '../data/vocabulary.json';
 
 const difficultyColors = {
-  easy: 'bg-green-100',
-  medium: 'bg-yellow-100',
-  hard: 'bg-red-100',
+  easy: 'bg-green-200/70 border-l-4 border-green-500',
+  medium: 'bg-yellow-200/70 border-l-4 border-yellow-500',
+  hard: 'bg-rose-200/70 border-l-4 border-rose-500',
 };
+
 
 const LessonDetail = () => {
   const { lesson_no } = useParams();

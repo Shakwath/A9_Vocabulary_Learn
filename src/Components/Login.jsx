@@ -1,6 +1,6 @@
-import { GoogleAuthProvider, signInWithPopup, GithubAuthProvider, signInWithEmailAndPassword } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup, GithubAuthProvider, signInWithEmailAndPassword,sendPasswordResetEmail } from "firebase/auth";
 import auth from "../Firebase.init";
-import { useState } from "react";
+import { useState,useRef } from "react";
 import login from '../assets/login-illustration.jpg';
 import google from '../assets/google.png';
 import github from '../assets/github.png';
@@ -11,6 +11,7 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
+     const emailRef = useRef();
 
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
@@ -53,6 +54,19 @@ const Login = () => {
                 setError(error.message);
             });
     };
+    const handleForgetPassword = () => {
+        console.log('get me email address', emailRef.current.value);
+        const email = emailRef.current.value;
+        if(!email){
+            console.log('Please provide a valid email address')
+        }
+        else {
+            sendPasswordResetEmail(auth, email)
+            .then(() =>{
+                alert('Password Reset email sent, please check your email')
+            })
+        }
+    }
 
     return (
         <div className="flex flex-col md:flex-row items-center md:items-start p-6 gap-6 mt-14">
@@ -103,9 +117,9 @@ const Login = () => {
                         Don't have an account?{" "}
                         <Link className="text-cyan-700 font-bold" to="/signUp">Sign up</Link>
                     </p>
-                        <Link to="/contact" className="text-cyan-700 font-semibold">
-                            Forget Password?
-                        </Link>
+                            <label onClick={handleForgetPassword} className="label">
+                                <a href="#" className="label-text-alt text-cyan-700 link link-hover">Forgot password?</a>
+                            </label>
                     </div>
 
                     <button type="submit" className="w-full px-4 py-2 mb-4 bg-slate-800 text-white font-semibold rounded-md hover:bg-green-600 transition">
