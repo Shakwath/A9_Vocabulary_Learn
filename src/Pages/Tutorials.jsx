@@ -10,28 +10,22 @@ const Tutorials = () => {
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
         <div className="card card-border video-responsive">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/N9Yo-htlGU4?si=TFnOl7gUMJ87h7tM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-          </iframe>
+         <iframe width="560" height="315" src="https://www.youtube.com/embed/GADqvorP45M?si=aDZ-Vp92B9ggUjQ1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
         <div className="card card-border video-responsive">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/uxmYgJEtA-A?si=RWlg-GYsTqfEiq7x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-          </iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/lI4c_R8Wxuc?si=YH9Ixt9JBW7gVJva" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
         <div className="card card-border video-responsive">
-         <iframe width="560" height="315" src="https://www.youtube.com/embed/NQZYL39JEFo?si=bCGDZ0CAO46eneM-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-         </iframe>
+         <iframe width="560" height="315" src="https://www.youtube.com/embed/mNX1wpIQ4Uk?si=m5FF_-zkfuNsnQa4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
         <div className="card card-border video-responsive">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/fD6a-b--cu8?si=NaCYNzNw8O817Mdx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-          </iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/XEGITixasIs?si=enC0d7NRqNrNSN6_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
         <div className="card card-border video-responsive">
-         <iframe width="560" height="315" src="https://www.youtube.com/embed/VB0aIzMd-6k?si=Lb20FYogvxe1UX3i" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-         </iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/sDTCuXvSNFw?si=Wc2Wkgx5esQ8t_iX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
         <div className="card card-border video-responsive">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/AfBOIEROBI8?si=ZwDGQzg5FVKnwF6S" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-          </iframe>
+         <iframe width="560" height="315" src="https://www.youtube.com/embed/Vg4Yk8PTZ4k?si=DU6UZlPKKdwcQvoK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
       </div>
       <div className="flex justify-center">

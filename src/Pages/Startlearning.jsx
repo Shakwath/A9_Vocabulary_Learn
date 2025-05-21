@@ -23,7 +23,7 @@ const LetsLearnPage = () => {
       <div className="tutorial-section bg-gray-100 p-4 rounded-lg mb-8">
         <h2 className="text-3xl font-semibold text-center mb-4">Learn the Alphabet</h2>
         <div className="flex justify-center mb-4">
-         <iframe width="560" height="315" src="https://www.youtube.com/embed/drlIUqRYM-w?si=1-fLn_2KOaanR321" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+         <iframe width="560" height="315" src="https://www.youtube.com/embed/7T2kr_Vtgw8?si=AF-QNVihldmshGrT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
       </div>
 
