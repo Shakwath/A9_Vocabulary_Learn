@@ -11,20 +11,20 @@ const difficultyColors = {
   hard: 'bg-rose-200/70 border-l-4 border-rose-500',
 };
 
-
 const LessonDetail = () => {
   const { lesson_no } = useParams();
   const navigate = useNavigate();
-  const [ setUser] = useState(null);
+  const [setUser] = useState(null);
   const [vocabularies, setVocabularies] = useState([]);
+  const [lessonTitle, setLessonTitle] = useState('');
   const [selectedVocab, setSelectedVocab] = useState(null);
 
   // Function to speak the vocabulary word
-const speakWord = (word) => {
-  const utterance = new SpeechSynthesisUtterance(word);
-  utterance.lang = 'de-DE'; // German language
-  speechSynthesis.speak(utterance);
-};
+  const speakWord = (word) => {
+    const utterance = new SpeechSynthesisUtterance(word);
+    utterance.lang = 'de-DE'; // German language
+    speechSynthesis.speak(utterance);
+  };
 
   // Check user authentication
   useEffect(() => {
@@ -39,18 +39,24 @@ const speakWord = (word) => {
     return () => unsubscribe();
   }, [navigate]);
 
-  // Filter vocabulary data
+  // Filter vocabulary data and set lesson title
   useEffect(() => {
     const filtered = fakeData.filter(
       (item) => item.lesson_no === parseInt(lesson_no)
     );
     setVocabularies(filtered);
+
+    if (filtered.length > 0) {
+      setLessonTitle(filtered[0].lesson_title);
+    } else {
+      setLessonTitle('');
+    }
   }, [lesson_no]);
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold text-center mb-6">
-        Lesson {lesson_no} Vocabulary
+      <h1 className="text-3xl font-bold text-center mb-2">
+        Lesson {lesson_no}: {lessonTitle}
       </h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 justify-between">
@@ -63,6 +69,7 @@ const speakWord = (word) => {
             <p className="text-sm text-gray-700">Meaning: {vocab.meaning}</p>
             <p className="text-sm text-gray-600">Pronunciation: {vocab.pronunciation}</p>
             <p className="text-sm text-gray-600 italic">{vocab.part_of_speech}</p>
+
             <button
               onClick={() => setSelectedVocab(vocab)}
               className="mt-2 px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600"
@@ -70,15 +77,12 @@ const speakWord = (word) => {
               When to Say
             </button>
 
-            <h2 className="text-xl font-bold flex items-center gap-2">
-            {/* {vocab.word} */}
             <button
               onClick={() => speakWord(vocab.word)}
-              className="text-blue-500 hover:text-blue-700" >
-              Speak🔊
+              className="text-blue-500 hover:text-blue-700 mt-2 block"
+            >
+              Speak 🔊
             </button>
-            </h2>
-
           </div>
         ))}
       </div>

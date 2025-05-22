@@ -21,43 +21,54 @@ const Home = () => {
       <Banner />
 
       {/* Our Mission */}
-      <section className="bg-sky-50 py-12 md:py-24 mt-6 rounded-xl shadow-md border border-blue-100">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-blue-800 mb-4">Our Mission</h2>
-          <p className="text-base sm:text-lg text-gray-600 mb-10">
-            We’re on a mission to make language learning simple, enjoyable, and truly interactive. Through our intuitive platform, learners of all levels can build vocabulary confidently—anytime, anywhere.
-          </p>
+     <section className="bg-sky-50 py-10 sm:py-14 md:py-20 px-4 sm:px-6 rounded-xl shadow-md border border-blue-100 mt-6">
+      <div className="max-w-6xl mx-auto text-center">
+        {/* Title */}
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-800 mb-4">
+          Our Mission
+        </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-            <div>
-              <h3 className="text-xl sm:text-2xl font-semibold text-blue-700 mb-3">How It Works</h3>
-              <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
-                🎧 Accurate pronunciation<br />
-                📚 Clear meanings & grammar roles<br />
-                ✍️ Real-life example sentences<br />
-                Learn at your own pace and reinforce your knowledge through fun, interactive quizzes.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl sm:text-2xl font-semibold text-blue-700 mb-3">Why Learn with Us?</h3>
-              <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
-                ✅ Easy to follow <br />
-                ✅ Tailored to real-life use<br />
-                ✅ Consistently rewarding<br />
-                With hand-picked vocabulary and engaging tools, you'll grow not just in words—but in confidence.
-              </p>
-            </div>
+        {/* Subtitle */}
+        <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-8 sm:mb-10">
+          We’re on a mission to make language learning simple, enjoyable, and truly interactive. Through our intuitive platform, learners of all levels can build vocabulary confidently—anytime, anywhere.
+        </p>
+
+        {/* Info Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-10 text-left text-sm sm:text-base">
+          <div>
+            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-blue-700 mb-2 sm:mb-3">
+              How It Works
+            </h3>
+            <p className="text-gray-700 leading-relaxed">
+              🎧 Accurate pronunciation<br />
+              📚 Clear meanings & grammar roles<br />
+              ✍️ Real-life example sentences<br />
+              Learn at your own pace and reinforce your knowledge through fun, interactive quizzes.
+            </p>
           </div>
-
-          <div className="mt-10">
-            <Link to="/startlearning">
-              <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition shadow-lg text-sm sm:text-base">
-                Start Learning Now
-              </button>
-            </Link>
+          <div>
+            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-blue-700 mb-2 sm:mb-3">
+              Why Learn with Us?
+            </h3>
+            <p className="text-gray-700 leading-relaxed">
+              ✅ Easy to follow<br />
+              ✅ Tailored to real-life use<br />
+              ✅ Consistently rewarding<br />
+              With hand-picked vocabulary and engaging tools, you'll grow not just in words—but in confidence.
+            </p>
           </div>
         </div>
-      </section>
+
+        {/* CTA Button */}
+        <div className="mt-8 sm:mt-10">
+          <Link to="/startlearning">
+            <button className="bg-blue-600 text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg hover:bg-blue-700 transition shadow-lg text-sm sm:text-base">
+              Start Learning Now
+            </button>
+          </Link>
+        </div>
+      </div>
+    </section>
 
       {/* Our Achievements */}
       <section className="bg-white py-12 md:py-24 mt-12">
